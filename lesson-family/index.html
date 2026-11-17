@@ -1,0 +1,151 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>My Family — English, Grade 2</title>
+<link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;500;600&family=Nunito:wght@400;700;800&display=swap" rel="stylesheet">
+<style>
+:root{--o:#ff8a3c;--t:#17a89b;--y:#ffc93c;--b:#2d6cdf;--bg:#fff8e6;--ink:#2b3a4a}
+*{box-sizing:border-box;margin:0}
+body{font-family:Nunito,sans-serif;background:var(--bg);color:var(--ink);min-height:100vh;background-image:radial-gradient(#ffe2a8 2px,transparent 2px);background-size:34px 34px}
+h1,h2,h3,.btn,.tab{font-family:Fredoka,sans-serif}
+header{background:var(--t);color:#fff;padding:14px 20px;display:flex;align-items:center;gap:16px;position:sticky;top:0;z-index:5;box-shadow:0 4px 0 #0f8277}
+header h1{font-size:1.3rem;font-weight:600}
+.stars{margin-left:auto;background:var(--y);color:#7a4a00;border-radius:30px;padding:6px 16px;font-family:Fredoka;font-weight:600;font-size:1.1rem}
+.pop{animation:pop .5s}@keyframes pop{50%{transform:scale(1.3) rotate(-4deg)}}
+.prog{height:12px;background:#0f8277}.prog i{display:block;height:100%;width:0;background:var(--y);transition:width .5s;border-radius:0 8px 8px 0}
+nav{display:flex;gap:8px;flex-wrap:wrap;padding:16px 20px 0;max-width:980px;margin:auto}
+.tab{border:0;background:#fff;color:var(--ink);padding:8px 14px;border-radius:30px;cursor:pointer;font-size:.95rem;box-shadow:0 3px 0 #e6d8b4}
+.tab.on{background:var(--o);color:#fff;box-shadow:0 3px 0 #d96a1a}
+main{max-width:980px;margin:auto;padding:20px}
+.step{display:none;background:#fff;border-radius:28px;padding:28px;box-shadow:0 8px 0 #f1dfae;animation:in .5s}.step.on{display:block}
+@keyframes in{from{opacity:0;transform:translateY(16px)}}
+.step h2{font-size:1.9rem;color:var(--o);margin-bottom:6px}
+.goal{display:inline-block;background:#e4f7f4;color:#0f7d73;border-radius:12px;padding:6px 12px;font-weight:800;margin-bottom:14px}
+.hero{display:grid;grid-template-columns:1.1fr 1fr;gap:24px;align-items:center}
+.hero img,.pic{width:100%;border-radius:22px}
+.btn{background:var(--o);color:#fff;border:0;border-radius:40px;padding:12px 26px;font-size:1.1rem;cursor:pointer;box-shadow:0 5px 0 #d96a1a;margin-top:14px}
+.btn:active{transform:translateY(3px);box-shadow:0 2px 0 #d96a1a}.btn.g{background:var(--t);box-shadow:0 5px 0 #0f8277}
+.cards{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:14px}
+.fc{perspective:700px;height:150px;cursor:pointer}
+.fc>div{position:relative;width:100%;height:100%;transition:transform .6s;transform-style:preserve-3d}
+.fc.flip>div{transform:rotateY(180deg)}
+.fc span{position:absolute;inset:0;border-radius:20px;display:flex;flex-direction:column;align-items:center;justify-content:center;backface-visibility:hidden;font-family:Fredoka;font-size:2.4rem}
+.fc .f{background:#fff1d6;border:3px dashed var(--y)}.fc .bk{background:var(--t);color:#fff;transform:rotateY(180deg);font-size:1.7rem;text-align:center}
+.fc small{font-family:Nunito;font-size:.85rem;font-weight:700;opacity:.8}
+.opts{display:grid;grid-template-columns:repeat(2,1fr);gap:12px;margin-top:14px}
+.opt{border:3px solid #ffe2a8;background:#fffdf5;border-radius:18px;padding:14px;font:700 1.1rem Nunito;cursor:pointer}
+.opt:hover{border-color:var(--o)}.opt.ok{background:#c9f2cf;border-color:#3cb25a}.opt.no{background:#ffd5d5;border-color:#e45;animation:sh .4s}
+@keyframes sh{25%{transform:translateX(-6px)}75%{transform:translateX(6px)}}
+.q{font:600 1.5rem Fredoka;margin-top:10px}.fb{min-height:28px;margin-top:12px;font-weight:800;color:var(--b)}
+.box{background:#eef4ff;border-radius:18px;padding:16px;margin:12px 0;border-left:8px solid var(--b)}
+.box b{color:var(--b)}
+.match{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:14px}
+.m{border:3px solid #cfe6ff;background:#f4f9ff;border-radius:16px;padding:12px;font:700 1.15rem Nunito;cursor:pointer;text-align:center}
+.m.sel{border-color:var(--o);background:#fff1d6}.m.done{background:#c9f2cf;border-color:#3cb25a;pointer-events:none}
+.words{display:flex;gap:8px;flex-wrap:wrap;margin:14px 0;min-height:52px}
+.w{background:var(--y);border-radius:14px;padding:8px 14px;font:600 1.2rem Fredoka;cursor:pointer;box-shadow:0 3px 0 #d9a21c}
+.line{background:#f4f9ff;border:3px dashed #9cc3ff;border-radius:16px;padding:10px;min-height:56px;display:flex;gap:8px;flex-wrap:wrap}
+.emo{display:flex;gap:14px;justify-content:center;margin:16px 0}.emo button{font-size:3rem;background:#fff1d6;border:4px solid transparent;border-radius:50%;width:90px;height:90px;cursor:pointer}.emo button.on{border-color:var(--o);transform:scale(1.15)}
+.nav{display:flex;justify-content:space-between;margin-top:20px}
+.say{background:none;border:0;font-size:1.3rem;cursor:pointer}
+ul.hw{padding-left:22px;line-height:2;font-weight:700}
+@media(max-width:700px){.hero,.cards,.opts,.match{grid-template-columns:1fr}.fc{height:120px}}
+</style></head><body>
+<header><h1>🏡 My Family</h1><span style="opacity:.9">English · Grade 2</span><div class="stars" id="stars">★ 0</div></header>
+<div class="prog"><i id="bar"></i></div>
+<nav id="tabs"></nav>
+<main>
+
+<section class="step on" data-n="Start">
+ <div class="hero"><div><h2>Hello! 👋</h2><p style="font-size:1.2rem;line-height:1.6;margin-top:8px">Today we talk about <b>my family</b>. You will learn new words, play games and collect <b>stars ⭐</b>.</p>
+ <div class="box"><b>Goal:</b> I can say who is who in my family.<br><b>Цель:</b> я могу рассказать о членах своей семьи.</div>
+ <button class="btn" data-go="1">Let's start! →</button></div>
+ <img src="img/family.webp" alt="Family"></div>
+</section>
+
+<section class="step" data-n="1 · Warm-up">
+ <h2>1. Warm-up</h2><span class="goal">Who is who?</span>
+ <p>Look at the family. Tap the picture and answer. <button class="say" data-say="Look at the picture. Who is the man with glasses?">🔊</button></p>
+ <img class="pic" src="img/family.webp" alt="Family" style="max-height:340px;object-fit:contain;background:#fff8e6">
+ <div class="q" id="wq"></div><div class="opts" id="wo"></div><div class="fb" id="wf"></div>
+</section>
+
+<section class="step" data-n="2 · Revision">
+ <h2>2. Revision</h2><span class="goal">Match the English word and the picture</span>
+ <p>Tap a word, then its pair. / Нажми слово, затем пару.</p>
+ <div class="match" id="rev"></div><div class="fb" id="rf"></div>
+</section>
+
+<section class="step" data-n="3 · Vocabulary">
+ <h2>3. New words</h2><span class="goal">Tap a card · listen 🔊 · repeat</span>
+ <div class="cards" id="voc"></div>
+</section>
+
+<section class="step" data-n="4 · Grammar">
+ <h2>4. Grammar</h2><span class="goal">He is… / She is… / This is my…</span>
+ <div class="box"><b>This is my</b> mother. &nbsp; <b>He is</b> my father. &nbsp; <b>She is</b> my sister.<br>👦 He = мальчик, мужчина &nbsp; 👧 She = девочка, женщина</div>
+ <div class="q" id="gq"></div><div class="opts" id="go"></div><div class="fb" id="gf"></div>
+</section>
+
+<section class="step" data-n="5 · Practice">
+ <h2>5. Practice</h2><span class="goal">Build the sentence</span>
+ <p id="pt" style="font-weight:800;font-size:1.2rem"></p>
+ <div class="line" id="pl"></div><div class="words" id="pw"></div>
+ <button class="btn g" id="pc">Check ✓</button> <button class="btn" id="pr" style="background:#9aa7b5;box-shadow:0 5px 0 #77838f">Reset</button>
+ <div class="fb" id="pf"></div>
+</section>
+
+<section class="step" data-n="6 · Feedback">
+ <h2>6. Feedback</h2><span class="goal">How was the lesson?</span>
+ <div class="emo" id="emo"><button>😍</button><button>🙂</button><button>😐</button></div>
+ <div class="fb" id="ef" style="text-align:center;font-size:1.2rem"></div>
+ <p style="margin-top:16px;line-height:1.7">I can say: <b>This is my …</b> ✓ &nbsp; I know 6 family words ✓ &nbsp; I can use <b>he / she</b> ✓</p>
+</section>
+
+<section class="step" data-n="7 · Homework">
+ <h2>7. Homework 🏠</h2><span class="goal">Домашнее задание</span>
+ <ul class="hw"><li>Draw your family (or a photo) and sign each person: <i>This is my…</i></li><li>Learn 6 words: mother, father, sister, brother, grandma, grandpa.</li><li>Tell 3 sentences about your family to mum or dad.</li></ul>
+ <div class="box" id="fin"></div>
+ <button class="btn" id="again">Play again ↺</button>
+</section>
+
+<div class="nav"><button class="btn g" id="prev">← Back</button><button class="btn" id="next">Next →</button></div>
+</main>
+<script>
+const $=(s,r=document)=>r.querySelector(s),$$=(s,r=document)=>[...r.querySelectorAll(s)];
+const steps=$$('.step');let cur=0,stars=0;
+const say=t=>{try{speechSynthesis.cancel();const u=new SpeechSynthesisUtterance(t);u.lang='en-US';u.rate=.8;speechSynthesis.speak(u)}catch(e){}};
+$$('[data-say]').forEach(b=>b.onclick=()=>say(b.dataset.say));
+const star=n=>{stars+=n;const s=$('#stars');s.textContent='★ '+stars;s.classList.remove('pop');void s.offsetWidth;s.classList.add('pop')};
+const tabs=$('#tabs');steps.forEach((s,i)=>{const b=document.createElement('button');b.className='tab';b.textContent=s.dataset.n;b.onclick=()=>go(i);tabs.append(b)});
+function go(i){cur=Math.max(0,Math.min(steps.length-1,i));steps.forEach((s,k)=>s.classList.toggle('on',k==cur));$$('.tab').forEach((t,k)=>t.classList.toggle('on',k==cur));$('#bar').style.width=(cur/(steps.length-1)*100)+'%';$('#prev').style.visibility=cur?'visible':'hidden';$('#next').style.visibility=cur<steps.length-1?'visible':'hidden';if(cur==7)$('#fin').innerHTML='<b>Well done!</b> You collected ★ '+stars+'. Great job! 🏆';scrollTo({top:0,behavior:'smooth'})}
+$('#prev').onclick=()=>go(cur-1);$('#next').onclick=()=>go(cur+1);$$('[data-go]').forEach(b=>b.onclick=()=>go(+b.dataset.go));
+$('#again').onclick=()=>{stars=0;star(0);location.reload()};
+
+function quiz(qs,q,o,f){let i=0;const show=()=>{const x=qs[i%qs.length];$(q).textContent=x.q;$(f).textContent='';
+ const opts=[...x.o].sort(()=>Math.random()-.5);$(o).innerHTML=opts.map(v=>`<button class="opt">${v}</button>`).join('');
+ $$('.opt',$(o)).forEach(b=>b.onclick=()=>{if(b.textContent==x.o[0]){b.classList.add('ok');star(1);$(f).textContent='🎉 Yes! +1 star';say(x.s||x.o[0]);$$('.opt',$(o)).forEach(z=>z.disabled=true);i++;if(i<qs.length)setTimeout(show,1200);else $(f).textContent+=' — Well done! Go next →'}else{b.classList.add('no');$(f).textContent='Try again 💪'}})};show()}
+quiz([{q:'Who is the man with glasses and a green vest?',o:['grandpa','father','brother','dog'],s:'This is my grandpa'},{q:'Who is the woman in the yellow cardigan?',o:['mother','sister','grandma','girl'],s:'This is my mother'},{q:'Who is the boy in the striped T-shirt?',o:['brother','father','grandpa','baby'],s:'He is my brother'}],'#wq','#wo','#wf');
+
+const V=[['mother','мама','👩'],['father','папа','👨'],['sister','сестра','👧'],['brother','брат','👦'],['grandma','бабушка','👵'],['grandpa','дедушка','👴']];
+$('#voc').innerHTML=V.map(v=>`<div class="fc" data-w="${v[0]}"><div><span class="f">${v[2]}<small>${v[0]}</small></span><span class="bk">${v[0]}<small>${v[1]}</small></span></div></div>`).join('');
+$$('.fc').forEach(c=>c.onclick=()=>{c.classList.toggle('flip');say(c.dataset.w)});
+
+{let sel=null,left=V.length;const L=V.map(v=>({k:v[0],t:v[0],e:0})),R=V.map(v=>({k:v[0],t:v[2]+' '+v[1],e:1}));
+ const all=[...L,...R].sort(()=>Math.random()-.5);$('#rev').innerHTML=all.map(x=>`<button class="m" data-k="${x.k}" data-e="${x.e}">${x.t}</button>`).join('');
+ $$('.m').forEach(b=>b.onclick=()=>{if(!sel){sel=b;b.classList.add('sel');return}
+  if(sel===b){b.classList.remove('sel');sel=null;return}
+  if(sel.dataset.k==b.dataset.k&&sel.dataset.e!=b.dataset.e){[sel,b].forEach(z=>{z.classList.remove('sel');z.classList.add('done')});star(1);say(b.dataset.k);if(!--left)$('#rf').textContent='🏆 All pairs found! Next →'}
+  else{sel.classList.remove('sel');$('#rf').textContent='Try again 💪'}sel=null})}
+
+quiz([{q:'Look at the girl. “___ is my sister.”',o:['She','He','It','They']},{q:'Look at the man in the blue shirt. “___ is my father.”',o:['He','She','It','We']},{q:'“This ___ my grandma.”',o:['is','am','are','be']}],'#gq','#go','#gf');
+
+{const S=[['Это моя мама.','This is my mother'],['Он мой брат.','He is my brother'],['Она моя бабушка.','She is my grandma']];let k=0,cur2=[];
+ const load=()=>{const [ru,en]=S[k%S.length];$('#pt').textContent=ru;cur2=[];$('#pl').innerHTML='';$('#pf').textContent='';
+ $('#pw').innerHTML=en.split(' ').sort(()=>Math.random()-.5).map(w=>`<span class="w">${w}</span>`).join('');
+ $$('.w',$('#pw')).forEach(w=>w.onclick=()=>{$('#pl').append(w);cur2.push(w.textContent);say(w.textContent)})};
+ $('#pr').onclick=load;
+ $('#pc').onclick=()=>{const en=S[k%S.length][1];if(cur2.join(' ')==en){star(2);$('#pf').textContent='🌟 Perfect! +2 stars';say(en);k++;if(k<S.length)setTimeout(load,1400);else $('#pf').textContent+=' — All done! Next →'}else $('#pf').textContent='Not yet — check the word order 🤔'};load()}
+
+$$('#emo button').forEach(b=>b.onclick=()=>{$$('#emo button').forEach(x=>x.classList.remove('on'));b.classList.add('on');$('#ef').textContent='Thank you! See you next lesson! 👋';star(1)});
+go(0);
+</script></body></html>
